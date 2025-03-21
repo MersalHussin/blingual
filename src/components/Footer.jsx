@@ -6,24 +6,30 @@ const Footer = () => {
     <footer className="footer">
       <div className="container">
         <div className="footer-logo">
-          <img src={"./assets/Hero-image.png" || "/placeholder.svg"} alt="B-lingual Logo" />
+          <img src={"./assets/logo.png" || "/placeholder.svg"} alt="B-lingual Logo" />
           
         </div>
 
         <div className="social-links">
-          <a href="#" className="social-link">
-      
+          <a href="https://api.whatsapp.com/message/FOSTJGBTNFQYH1?autoload=1&app_absent=0" className="social-link">
+          <i className="fa-brands fa-whatsapp"></i>
           </a>
-          <a href="#" className="social-link">
-        
+          <a href="https://www.facebook.com/SohilaEnglish/" className="social-link">
+          <i className="fa-brands fa-facebook"></i>
           </a>
-          <a href="#" className="social-link">
-            
+          <a href="https://www.instagram.com/sohailaenglish?igsh=MW9vaWVvaHJ2b3lodg%3D%3D" className="social-link">
+          <i className="fa-brands fa-instagram"></i>
           </a>
-          <a href="#" className="social-link">
-          
+          <a href="https://www.tiktok.com/@belingual?lang=en" className="social-link">
+          <i className="fa-brands fa-tiktok"></i>
+          </a>
+          <a href="https://www.youtube.com/@sohailaEnglish" className="social-link">
+          <i className="fa-brands fa-youtube"></i>
           </a>
         </div>
+        <div className="footer-line"></div>
+        <p className="rights">&copy; {new Date().getFullYear()} B-lingual. All rights reserved.</p>
+        <a className="Developer" target="_blank" href="https://mersal.top">Designed & Developed in Fire by Mersal</a>
       </div>
     </footer>
   )

@@ -4,6 +4,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
+  text-decoration: none;
 }
 
 :root {
@@ -14,17 +16,22 @@
   --light-text: #fff;
 }
 
+::selection{
+  background-color: var(--primary-blue);
+  color: var(--light-text);
+}
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Baloo Bhaijaan 2", sans-serif;
   color: var(--dark-text);
   overflow-x: hidden;
+  background-color: #ffffff;
 }
 
 .container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 50px;
 }
 
 .btn {
@@ -64,6 +71,41 @@ body {
   color: var(--primary-blue);
   text-align: center;
   margin-bottom: 2rem;
+  position: relative;
+}
+.section-title::after,
+.section-title::before {
+  content: "";
+  width: 30px;
+  height: 5px;
+  border-radius: 3px;
+  position: absolute;
+  bottom:-10px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.3s ease-in-out;
+}
+.section-title::after{
+  background-color: var(--primary-orange);
+  animation: lineAnimation 0.7s linear alternate infinite;
+}
+.section-title::before{
+  background-color: var(--primary-blue);
+  left: 50%;
+  width: 100px;
+}
+
+@keyframes lineAnimation {
+  0% {
+    width: 30px;
+  }
+  100% {
+    width: 120px;
+  }
+}
+.section-title:hover::after{
+  width: 100px;
+  animation-play-state: paused;
 }
 
 @media (max-width: 768px) {

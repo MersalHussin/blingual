@@ -12,7 +12,7 @@ function App() {
       <main className="main-content">
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/kids" element={<KidsPage />} />
+          <Route path="/:category" element={<KidsPage />} />
         </Routes>
       </main>
       <Footer />

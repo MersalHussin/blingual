@@ -16,8 +16,8 @@ const AboutUs = () => {
               We empower individuals to master different languages through innovative teaching methods and personalized
               learning paths. Our goal is to enhance their career prospects and open doors to a brighter future.
             </p>
-            <a href="#contact" className="btn btn-outline">
-              Contact Us
+            <a href="https://api.whatsapp.com/message/FOSTJGBTNFQYH1?autoload=1&app_absent=0" target="_blank" className="btn btn-outline">
+              Contact Us  <i class="fa-brands fa-whatsapp"></i>
             </a>
           </div>
         </div>

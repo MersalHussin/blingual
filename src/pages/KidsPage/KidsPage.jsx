@@ -1,183 +1,186 @@
-import { Link } from "react-router-dom"
-import "./KidsPage.css"
+import { useEffect, useState } from "react";
+import { useParams, Navigate, Link } from "react-router-dom";
+import "./KidsPage.css";
+import Courses from "../../components/Courses";
+import CallToAction from "../../components/CallToAction";
 
-const KidsPage = () => {
+export default function CoursesPage() {
+  const { category } = useParams();
+  const [isLoaded, setIsLoaded] = useState(false);
+  const validCategories = ["Kids", "Teens", "Adults"];
+  const activeTab = validCategories.includes(category) ? category : "Kids";
+
+  useEffect(() => {
+    setIsLoaded(true);
+    window.scrollTo(0, 0);
+  }, []);
+
+  const coursesData = {
+    Kids: [
+      {
+        id: 1,
+        title: "Conversation",
+        image: "/assets/Conversation-English-Kids.jpg",
+        imageAlt: "Children in conversation",
+        colorClass: "orange",
+        sessions: 8,
+        sessionsPerWeek: 2,
+        sessionTime: 60,
+        content: "Speaking - Listening - Reading - Writing - Grammar",
+        options: ["Private", "Group"],
+      },
+      {
+        id: 2,
+        title: "Foundation Course",
+        image: "/assets/kids.jpg",
+        imageAlt: "Child studying",
+        colorClass: "blue",
+        sessions: 8,
+        sessionsPerWeek: 2,
+        sessionTime: 60,
+        content: "Speaking - Listening - Reading - Writing - Grammar",
+        options: ["Private", "Group"],
+      },
+      {
+        id: 3,
+        title: "General English",
+        image: "/assets/General-English-Kids.jpg",
+        imageAlt: "Children studying together",
+        colorClass: "orange",
+        sessions: 8,
+        sessionsPerWeek: 2,
+        sessionTime: 60,
+        content: "Speaking - Listening - Reading - Writing - Grammar",
+        options: ["Private", "Group"],
+      },
+    ],
+    Teens: [
+      {
+        id: 4,
+        title: "Genral English",
+        image: "./assets/General-English.jpg",
+        imageAlt: "Teens learning",
+        colorClass: "orange",
+        sessions: 8,
+        sessionsPerWeek: 2,
+        sessionTime: 60,
+        content: "Speaking - Listening - Reading - Writing - Grammar",
+        options: ["Private", "Group"],
+      },
+      {
+        id: 5,
+        title: "Business English",
+        image: "./assets/Business-English.jpg",
+        imageAlt: "Teen debate",
+        colorClass: "blue",
+        sessions: 8,
+        sessionsPerWeek: 2,
+        sessionTime: 180,
+        content: "Speaking - Listening - Reading - Writing - Grammar",
+        options: ["Private", "Group"],
+      },
+      {
+        id: 6,
+        title: "English Conversation",
+        image: "./assets/Conversation-English.jpg",
+        imageAlt: "Teen debate",
+        colorClass: "orange",
+        sessions: 8,
+        sessionsPerWeek: 2,
+        sessionTime: 60,
+        content: "Speaking - Listening - Reading - Writing - Grammar",
+        options: ["Private", "Group"],
+      },
+    ],
+    Adults: [
+    
+      {
+        id: 7,
+        title: "Genral English",
+        image: "./assets/General-English.jpg",
+        imageAlt: "Teens learning",
+        colorClass: "orange",
+        sessions: 8,
+        sessionsPerWeek: 2,
+        sessionTime: 60,
+        content: "Speaking - Listening - Reading - Writing - Grammar",
+        options: ["Private", "Group"],
+      },
+      {
+        id: 8,
+        title: "Business English",
+        image: "./assets/Business-English.jpg",
+        imageAlt: "Teen debate",
+        colorClass: "blue",
+        sessions: 8,
+        sessionsPerWeek: 2,
+        sessionTime: 180,
+        content: "Speaking - Listening - Reading - Writing - Grammar",
+        options: ["Private", "Group"],
+      },
+      {
+        id: 9,
+        title: "English Conversation",
+        image: "./assets/Conversation-English.jpg",
+        imageAlt: "Teen debate",
+        colorClass: "orange",
+        sessions: 8,
+        sessionsPerWeek: 2,
+        sessionTime: 60,
+        content: "Speaking - Listening - Reading - Writing - Grammar",
+        options: ["Private", "Group"],
+      },
+
+    ],
+  };
+
   return (
-    <div className="kids-page">
-      <div className="kids-hero">
-        <div className="container">
-          <h1>
-            English Learning Programs for <span>Kids</span>
-          </h1>
-          <p>
-            We offer exceptional educational programs for children aged 4 to 12, designed to meet their needs and
-            develop their language skills in a fun and interactive way.
-          </p>
-        </div>
-      </div>
-
-      <section className="kids-features">
-        <div className="container">
-          <h2 className="section-title">Our Program Features</h2>
-
-          <div className="features-grid">
-            <div className="feature-card">
-              <div className="feature-icon">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="40"
-                  height="40"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="9" cy="7" r="4"></circle>
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                </svg>
-              </div>
-              <h3>Specialized Teachers</h3>
-              <p>A team of teachers specialized in teaching children using modern educational methods</p>
-            </div>
-
-            <div className="feature-card">
-              <div className="feature-icon">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="40"
-                  height="40"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                </svg>
-              </div>
-              <h3>Interactive Curriculum</h3>
-              <p>Curriculum specially designed for children based on games and interactive activities</p>
-            </div>
-
-            <div className="feature-card">
-              <div className="feature-icon">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="40"
-                  height="40"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <path d="M12 8v4l3 3"></path>
-                </svg>
-              </div>
-              <h3>Flexible Schedule</h3>
-              <p>A flexible study schedule that suits children's times and family circumstances</p>
-            </div>
-
-            <div className="feature-card">
-              <div className="feature-icon">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="40"
-                  height="40"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                </svg>
-              </div>
-              <h3>Continuous Support</h3>
-              <p>Continuous communication with parents to follow up on children's progress and provide advice</p>
-            </div>
+    <>
+    <div className={`courses-container ${isLoaded ? "fade-in" : ""}`}>
+      <header className="header">
+        <div className="header-content">
+          <h1 className="animate-title">{activeTab} Courses</h1>
+          <div className="breadcrumb">
+            <Link to="/">Home</Link>
+            <span className="arrow">▶</span>
+            <Link to="/#courses">Courses</Link>
+            <span className="arrow">▶</span>
+            <span className="active">{activeTab}</span>
           </div>
         </div>
-      </section>
+      </header>
 
-      <section className="kids-levels">
-        <div className="container">
-          <h2 className="section-title">Available Levels</h2>
-
-          <div className="levels-grid">
-            <div className="level-card">
-              <div className="level-header">
-                <h3>Beginner Level</h3>
-                <span className="level-age">4-6 years</span>
+      <main>
+      <h2 className="section-title">{activeTab} Courses</h2>
+        <h3 className="courses-txt">We offer a variety of courses tailored to suit different learning needs and levels</h3>
+        <div className="courses-grid">
+          {coursesData[activeTab].map((course) => (
+            <div key={course.id} className={`course-box ${course.colorClass}`}>
+              <div className="course-data-image">
+                <img
+                  src={course.image || "/placeholder.svg"}
+                  alt={course.imageAlt}
+                  className="zoom-image"
+                />
               </div>
-              <div className="level-content">
-                <ul>
-                  <li>Learning letters and numbers</li>
-                  <li>Basic vocabulary</li>
-                  <li>Colors and shapes</li>
-                  <li>Simple songs and stories</li>
-                </ul>
+              <h2>{course.title}</h2>
+              <div className="course-details">
+                <p>Level Sessions: {course.sessions} sessions</p>
+                <p>Session per week: {course.sessionsPerWeek} session</p>
+                <p>Session time: {course.sessionTime} minutes</p>
+                <p>Course content: {course.content}</p>
+                <h4 className="course-options">{course.options.join(" | ")}</h4>
+                <a href="https://api.whatsapp.com/message/FOSTJGBTNFQYH1?autoload=1&app_absent=0" target="_blank" className="book-now">
+                  <span>Book Now</span>
+                </a>
               </div>
             </div>
-
-            <div className="level-card">
-              <div className="level-header">
-                <h3>Elementary Level</h3>
-                <span className="level-age">7-9 years</span>
-              </div>
-              <div className="level-content">
-                <ul>
-                  <li>Building simple sentences</li>
-                  <li>Daily conversations</li>
-                  <li>Reading and writing</li>
-                  <li>Language games</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="level-card">
-              <div className="level-header">
-                <h3>Advanced Level</h3>
-                <span className="level-age">10-12 years</span>
-              </div>
-              <div className="level-content">
-                <ul>
-                  <li>Fluent conversation</li>
-                  <li>Basic grammar</li>
-                  <li>Story writing</li>
-                  <li>Interactive projects</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
-      </section>
-
-      <section className="kids-cta">
-        <div className="container">
-          <h2>Register your child now and get a free trial session</h2>
-          <div className="cta-buttons">
-            <a href="#" className="btn btn-primary">
-              Register Now
-            </a>
-            <Link to="/" className="btn btn-outline">
-              Back to Home
-            </Link>
-          </div>
-        </div>
-      </section>
+      </main>
     </div>
-  )
+    {/* <CallToAction /> */}
+    <Courses />
+    </>
+  );
 }
-
-export default KidsPage
-

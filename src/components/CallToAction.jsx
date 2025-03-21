@@ -5,12 +5,12 @@ const CallToAction = () => {
     <section id="contact" className="cta">
       <div className="container">
         <h2>
-          Are you ready
+          Are You Ready
           <br />
-          To Start your Journy
+          to Start Your Journy
         </h2>
-        <a href="#" className="btn btn-outline">
-          Contact us
+        <a href="https://api.whatsapp.com/message/FOSTJGBTNFQYH1?autoload=1&app_absent=0" target="_blank" className="btn btn-outline">
+          Contact us           <i class="fa-brands fa-whatsapp"></i>
         </a>
       </div>
     </section>

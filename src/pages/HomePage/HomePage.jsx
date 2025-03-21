@@ -4,6 +4,7 @@ import Courses from "../../components/Courses"
 import CallToAction from "../../components/CallToAction"
 import Reviews from "../../components/Reviews"
 import "./HomePage.css"
+import ProgramFeatures from "../../components/ProgramFeatures"
 
 const HomePage = () => {
   return (
@@ -11,6 +12,7 @@ const HomePage = () => {
       <Hero />
       <AboutUs />
       <Courses />
+      <ProgramFeatures/>
       <CallToAction />
       <Reviews />
     </div>

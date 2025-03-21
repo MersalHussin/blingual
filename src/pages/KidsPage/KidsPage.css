@@ -1,207 +1,403 @@
-.kids-page {
-  display: flex;
-  flex-direction: column;
-}
+/* Reset and base styles */
 
-.kids-hero {
-  background-color: var(--primary-blue);
-  color: #fff;
-  padding: 80px 0;
-  text-align: center;
-}
-
-.kids-hero h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-.kids-hero span {
-  color: var(--primary-orange);
-}
-
-.kids-hero p {
-  font-size: 1.2rem;
-  max-width: 800px;
+.kids-courses-container {
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
-  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.kids-features {
-  padding: 80px 0;
-  background-color: #fff;
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
-}
-
-.feature-card {
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  padding: 30px;
+/* Header styles */
+.header {
+  background-color: var(--primary-orange);
+  background-image: linear-gradient(#EA742C, rgba(244, 124, 60, 0.92)),
+    url("/public/assets/CoursesBG2.jpg");
+  background-size: cover;
+background-position: center;
+  color: white;
+  padding: 100px 20px;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.feature-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.feature-icon {
-  color: var(--primary-orange);
-  margin-bottom: 20px;
-}
-
-.feature-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  color: var(--primary-blue);
-}
-
-.feature-card p {
-  color: #666;
-  line-height: 1.6;
-}
-
-.kids-levels {
-  padding: 80px 0;
-  background-color: var(--light-gray);
-}
-
-.levels-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
-}
-
-.level-card {
-  background-color: #fff;
-  border-radius: 10px;
+  position: relative;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px;
 }
 
-.level-header {
-  background-color: var(--primary-blue);
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-  position: relative;
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+  transform: translateX(-100%);
+  animation: shine 3s infinite;
 }
 
-.level-header h3 {
-  font-size: 1.5rem;
-  margin-bottom: 5px;
+@keyframes shine {
+  0% {
+    transform: translateX(-100%);
+  }
+  20%,
+  100% {
+    transform: translateX(100%);
+  }
 }
 
-.level-age {
-  display: inline-block;
-  background-color: var(--primary-orange);
-  padding: 5px 10px;
-  border-radius: 20px;
-  font-size: 0.9rem;
+.header-content h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
 }
 
-.level-content {
-  padding: 20px;
+.animate-title {
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
 }
 
-.level-content ul {
-  list-style-type: none;
-  padding: 0;
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.level-content ul li {
-  padding: 10px 0;
-  border-bottom: 1px solid #eee;
-  position: relative;
-}
-
-.level-content ul li:before {
-  content: "✓";
-  color: var(--primary-orange);
-  margin-right: 10px;
-}
-
-.level-content ul li:last-child {
-  border-bottom: none;
-}
-
-.kids-cta {
-  padding: 80px 0;
-  background-color: var(--primary-orange);
-  text-align: center;
-  color: #fff;
-}
-
-.kids-cta h2 {
-  font-size: 2.2rem;
-  margin-bottom: 30px;
-}
-
-.cta-buttons {
+.breadcrumb {
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  animation: fadeIn 1.5s ease forwards;
+  opacity: 0;
+}
+.breadcrumb  a{
+color: white;
+font-size: 15px;
+font-weight: 700;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.arrow {
+  font-size: 10px;
+}
+
+.active {
+  background-color: white;
+  color: #f47c3c;
+  padding: 5px 15px;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.active:hover {
+  transform: scale(1.05);
+}
+
+.courses-txt{
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 20px;
+  line-height: 1.3;
+
+  text-align: center;
+  padding: 0 20px 20px;
+  color: var(--primary-blue);
+  max-width: 450px;
+  margin: auto;
+}
+
+/* Courses grid */
+.courses-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
+  padding: 0 20px;
+  margin-bottom: 50px;
 }
 
-.kids-cta .btn-primary {
-  background-color: #fff;
+.course-box {
+  width: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+  transform: translateY(30px);
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.course-box:nth-child(1) {
+  animation-delay: 0.4s;
+}
+
+.course-box:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+.course-box:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+.course-box:hover {
+  transform: translateY(-15px) scale(1.03);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.course-data-image {
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+}
+
+.course-data-image::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent);
+}
+
+.zoom-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.course-box:hover .zoom-image {
+  transform: scale(1.15);
+}
+
+.course-box h2 {
+  text-align: center;
+  padding: 18px 0;
+  font-size: 24px;
+  position: relative;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.course-box h2::after {
+  content: "";
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background-color: white;
+  transition: all 0.4s ease;
+  transform: translateX(-50%);
+  border-radius: 3px;
+}
+
+.course-box:hover h2::after {
+  width: 80px;
+}
+
+.course-details {
+  padding: 20px;
+  position: relative;
+}
+
+.course-details::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 80%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.course-details p {
+  margin-bottom: 12px;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.5;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-left: 5px;
+}
+
+.course-details p:not(:last-child)::before {
+  content: "•";
+  position: absolute;
+  left: -8px;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.course-box:hover .course-details p:not(:last-child)::before {
+  opacity: 1;
+  left: -3px;
+}
+
+.course-box:hover .course-details p {
+  transform: translateX(8px);
+}
+
+.course-options {
+  margin: 20px 0 10px;
+  font-weight: bold;
+  text-align: center;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.book-now {
+  display: block;
+  width: 100%;
+  padding: 6px 12px;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.book-now span {
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.book-now::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.book-now:hover::before {
+  left: 0;
+}
+
+.book-now:hover span {
+  transform: scale(1.05);
+}
+
+.book-now:active {
+  transform: scale(0.98);
+}
+
+/* Course card specific styles */
+.course-box.orange  {
+  background-color: var(--primary-orange);
+  color: white;
+}
+
+.course-box  .book-now {
   color: var(--primary-orange);
+  border-color: white;
+  border: 2px solid white;
 }
 
-.kids-cta .btn-primary:hover {
+.course-box.orange  .book-now::before {
+  background-color: var(--primary-orange);
+}
+
+.course-box.orange  .book-now:hover span {
+  color: white;
+}
+
+.course-box.blue {
   background-color: var(--primary-blue);
-  color: #fff;
+  color: white;
 }
 
-.kids-cta .btn-outline {
-  border-color: #fff;
-  color: #fff;
+.course-box.blue .book-now {
+  color: var(--primary-blue);
+  border-color: white;
 }
 
-.kids-cta .btn-outline:hover {
-  background-color: #fff;
-  color: var(--primary-orange);
+.course-box.blue .book-now::before {
+  background-color: var(--primary-blue);
 }
 
-@media (max-width: 992px) {
-  .kids-hero h1 {
-    font-size: 2.5rem;
-  }
-
-  .kids-cta h2 {
-    font-size: 1.8rem;
-  }
+.course-box.blue .book-now:hover span {
+  color: white;
 }
 
-@media (max-width: 576px) {
-  .kids-hero {
-    padding: 60px 0;
-  }
+.general {
+  background-color: var(--primary-orange);
+  color: white;
+}
 
-  .kids-hero h1 {
-    font-size: 2rem;
-  }
+.general .book-now {
+  color: #f47c3c;
+  border-color: white;
+}
 
-  .kids-hero p {
-    font-size: 1rem;
-  }
+.general .book-now::before {
+  background-color: var(--primary-orange);
+}
 
-  .cta-buttons {
+.general .book-now:hover span {
+  color: white;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .courses-grid {
     flex-direction: column;
     align-items: center;
   }
 
-  .kids-features,
-  .kids-levels,
-  .kids-cta {
-    padding: 60px 0;
+  .course-box {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .header-content h1 {
+    font-size: 36px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+    padding: 0 20px;
+  }
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
