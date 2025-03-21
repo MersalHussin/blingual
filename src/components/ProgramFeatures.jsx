@@ -29,7 +29,7 @@ function ProgramFeatures() {
             </svg>
           </div>
           <h3>Specialized Teachers</h3>
-          <p>Expert teachers using modern methods for all age groups</p>
+          <p>Expert teachers using modern methods for all age</p>
                   </div>
 
         <div className="feature-card">

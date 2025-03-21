@@ -19,9 +19,9 @@ export default function CoursesPage() {
     Kids: [
       {
         id: 1,
-        title: "Conversation",
-        image: "/assets/Conversation-English-Kids.jpg",
-        imageAlt: "Children in conversation",
+        title: "General English",
+        image: "/assets/General-English-Kids.jpg",
+        imageAlt: "Children studying together",
         colorClass: "orange",
         sessions: 8,
         sessionsPerWeek: 2,
@@ -31,9 +31,9 @@ export default function CoursesPage() {
       },
       {
         id: 2,
-        title: "Foundation Course",
-        image: "/assets/kids.jpg",
-        imageAlt: "Child studying",
+        title: "Conversation",
+        image: "/assets/Conversation-English-Kids.jpg",
+        imageAlt: "Children in conversation",
         colorClass: "blue",
         sessions: 8,
         sessionsPerWeek: 2,
@@ -43,9 +43,9 @@ export default function CoursesPage() {
       },
       {
         id: 3,
-        title: "General English",
-        image: "/assets/General-English-Kids.jpg",
-        imageAlt: "Children studying together",
+        title: "Foundation Course",
+        image: "/assets/kids.jpg",
+        imageAlt: "Child studying",
         colorClass: "orange",
         sessions: 8,
         sessionsPerWeek: 2,

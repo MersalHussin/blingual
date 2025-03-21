@@ -17,7 +17,7 @@ const Hero = () => {
           <a href="#about" className="btn btn-primary">
             Let's Discover
           </a>
-          <a href="https://api.whatsapp.com/message/FOSTJGBTNFQYH1?autoload=1&app_absent=0" target="_blank" className="btn btn-secondary">
+          <a href="https://wa.me/+201017305918" target="_blank" className="btn btn-secondary">
             Contact us
           </a>
           </div>

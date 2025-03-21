@@ -49,7 +49,7 @@ const Navbar = () => {
       <div className="container navbar-container">
         <div className="logo">
           <a href="/">
-            <img src="./assets/logo.png" alt="B-lingual Logo" />
+            <img src="./assets/Logo.png" alt="B-lingual Logo" />
           </a>
         </div>
 

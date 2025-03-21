@@ -18,14 +18,16 @@ const Courses = () => {
         </p>
 
         <div className="course-cards">
-          <Link to="/Kids" onClick={scrollToTop} className="course-card">
+          
+        <Link to="/Adults" onClick={scrollToTop} className="course-card">
             <div className="course-image">
-              <img src={"./assets/Kids.jpg" || "/placeholder.svg"} alt="Kids learning English" />
+            <img src={"./assets/Adults.jpg" || "/placeholder.svg"} alt="Teens learning English" />
             </div>
             <div className="course-info">
-              <h3>Kids</h3>
+              <h3>Adults</h3>
             </div>
           </Link>
+
 
           <Link to="/Teens" onClick={scrollToTop} className="course-card blue">
             <div className="course-image">
@@ -35,15 +37,15 @@ const Courses = () => {
               <h3>Teens</h3>
             </div>
           </Link>
-
-          <Link to="/Adults" onClick={scrollToTop} className="course-card">
+          <Link to="/Kids" onClick={scrollToTop} className="course-card">
             <div className="course-image">
-            <img src={"./assets/Adults.jpg" || "/placeholder.svg"} alt="Teens learning English" />
+              <img src={"./assets/Kids.jpg" || "/placeholder.svg"} alt="Kids learning English" />
             </div>
             <div className="course-info">
-              <h3>Adults</h3>
+              <h3>Kids</h3>
             </div>
           </Link>
+
         </div>
       </div>
     </section>
