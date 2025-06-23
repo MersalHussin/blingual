@@ -49,7 +49,7 @@ const Navbar = () => {
       <div className="container navbar-container">
         <div className="logo">
           <a href="/">
-            <img src="./assets/Logo.png" alt="B-lingual Logo" />
+            <img src="./assets/Logo.webp" alt="B-lingual Logo" />
           </a>
         </div>
 
@@ -86,12 +86,12 @@ const Navbar = () => {
               Reviews
             </a>
           </li>
-        <a href="tel:+201017305918" className="btn mobile btn-primary start-now-btn">
+        <a href="tel:+01108194341" className="btn mobile btn-primary start-now-btn">
           Contact Us <i className="fa-solid fa-phone-volume"></i>
         </a>
         </ul>
 
-        <a href="tel:+201017305918" className="btn desktop btn-primary start-now-btn">
+        <a href="tel:+01108194341" className="btn desktop btn-primary start-now-btn">
           Contact Us <i className="fa-solid fa-phone-volume"></i>
         </a>
       </div>

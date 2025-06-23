@@ -4,7 +4,7 @@
   position: relative;
   overflow: hidden;
   min-height: calc(100vh - 100px);
-  background:url('../../public/assets/Hero-BG.png') ;
+  background:url('../../public/assets/Hero-BG.webp') ;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -52,7 +52,7 @@
 }
 
 .hero-image img {
-  max-width: 100%;
+  max-width: 105%;
   height: auto;
   position: relative;
   z-index: 2;

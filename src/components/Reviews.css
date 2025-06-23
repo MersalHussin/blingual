@@ -1,6 +1,6 @@
 .reviews {
   padding: 80px 0;
-  background:url('../../public/assets/Hero-BG.png') ;
+  background:url('../../public/assets/Hero-BG.webp') ;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -12,6 +12,7 @@
   justify-content: center;
   align-items: start;
   gap: 30px;
+  background-color: white;
 }
 
 .review-card {
@@ -111,3 +112,26 @@
   }
 }
 
+
+
+
+
+.review-text {
+  margin: 0;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.read-more-btn {
+  background-color: var(--primary-orange);
+  border: none;
+  color: white;
+  padding: 10px 20px !important;
+  border-radius: 5px;
+  margin: 10px 0 20px 0;
+  cursor: pointer;
+  font-size: 14px !important;
+  font-weight: bold;
+  padding: 0;
+  font-size: 0.95rem;
+}

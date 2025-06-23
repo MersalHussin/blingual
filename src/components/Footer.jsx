@@ -6,12 +6,12 @@ const Footer = () => {
     <footer className="footer">
       <div className="container">
         <div className="footer-logo">
-          <img src={"./assets/Logo.png" || "/placeholder.svg"} alt="B-lingual Logo" />
+          <img src={"./assets/Logo.webp" || "/placeholder.svg"} alt="B-lingual Logo" />
           
         </div>
 
         <div className="social-links">
-          <a href="https://wa.me/+201017305918" className="social-link">
+          <a href="https://wa.me/message/53YMYDUG5NFVJ1" className="social-link">
           <i className="fa-brands fa-whatsapp"></i>
           </a>
           <a href="https://www.facebook.com/SohilaEnglish/" className="social-link">

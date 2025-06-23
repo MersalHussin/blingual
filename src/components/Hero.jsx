@@ -17,13 +17,13 @@ const Hero = () => {
           <a href="#about" className="btn btn-primary">
             Let's Discover
           </a>
-          <a href="https://wa.me/+201017305918" target="_blank" className="btn btn-secondary">
+          <a href="https://wa.me/message/53YMYDUG5NFVJ1" target="_blank" className="btn btn-secondary">
             Contact us
           </a>
           </div>
         </div>
         <div className="hero-image">
-          <img src={"./assets/Hero-image.png" || "/placeholder.svg"} alt="Student learning" />
+          <img src={"./assets/Hero-image.webp" || "/placeholder.svg"} alt="Student learning" />
         
         </div>
       </div>

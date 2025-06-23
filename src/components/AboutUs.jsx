@@ -8,7 +8,7 @@ const AboutUs = () => {
 
         <div className="about-content">
           <div className="about-image">
-            <img src={"./assets/About-image.jpg" || "/placeholder.svg"} alt="Students in classroom" />
+            <img src={"./assets/About-image.webp" || "/placeholder.svg"} alt="Students in classroom" />
           </div>
 
           <div className="about-text">
@@ -16,7 +16,7 @@ const AboutUs = () => {
               We empower individuals to master different languages through innovative teaching methods and personalized
               learning paths. Our goal is to enhance their career prospects and open doors to a brighter future.
             </p>
-            <a href="https://wa.me/+201017305918" target="_blank" className="btn btn-outline">
+            <a href="https://wa.me/message/53YMYDUG5NFVJ1" target="_blank" className="btn btn-outline">
               Contact Us  <i class="fa-brands fa-whatsapp"></i>
             </a>
           </div>

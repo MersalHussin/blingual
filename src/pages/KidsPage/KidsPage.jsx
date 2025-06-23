@@ -20,7 +20,7 @@ export default function CoursesPage() {
       {
         id: 1,
         title: "General English",
-        image: "/assets/General-English-Kids.jpg",
+        image: "/assets/General-English-Kids.webp",
         imageAlt: "Children studying together",
         colorClass: "orange",
         sessions: 8,
@@ -32,7 +32,7 @@ export default function CoursesPage() {
       {
         id: 2,
         title: "Conversation",
-        image: "/assets/Conversation-English-Kids.jpg",
+        image: "/assets/Conversation-English-Kids.webp",
         imageAlt: "Children in conversation",
         colorClass: "blue",
         sessions: 8,
@@ -44,7 +44,7 @@ export default function CoursesPage() {
       {
         id: 3,
         title: "Foundation Course",
-        image: "/assets/kids.jpg",
+        image: "/assets/Kids.webp",
         imageAlt: "Child studying",
         colorClass: "orange",
         sessions: 8,
@@ -57,8 +57,8 @@ export default function CoursesPage() {
     Teens: [
       {
         id: 4,
-        title: "Genral English",
-        image: "./assets/General-English.jpg",
+        title: "General English",
+        image: "./assets/General-English.webp",
         imageAlt: "Teens learning",
         colorClass: "orange",
         sessions: 8,
@@ -70,7 +70,7 @@ export default function CoursesPage() {
       {
         id: 5,
         title: "Business English",
-        image: "./assets/Business-English.jpg",
+        image: "./assets/Business-English.webp",
         imageAlt: "Teen debate",
         colorClass: "blue",
         sessions: 8,
@@ -82,7 +82,7 @@ export default function CoursesPage() {
       {
         id: 6,
         title: "English Conversation",
-        image: "./assets/Conversation-English.jpg",
+        image: "./assets/Conversation-English.webp",
         imageAlt: "Teen debate",
         colorClass: "orange",
         sessions: 8,
@@ -91,13 +91,26 @@ export default function CoursesPage() {
         content: "Speaking - Listening - Reading - Writing - Grammar",
         options: ["Private", "Group"],
       },
+          {
+        id: 7,
+        title: "The 90-day plan to be fluent in English",
+        CourseNote: "For intermediate levels",
+        image: "./assets/The 90.webp",
+        imageAlt: "Teen debate",
+        colorClass: "blue",
+        sessions_course: "24 + 12 on Friday",
+        due_course: "3 Months",
+        sessionTime: 120,
+        more_info : '2 Calls a week "48 calls during the course" & Daily Tasks for extra practice ',
+        options: ["Private", "Group"],
+      },
     ],
     Adults: [
     
       {
-        id: 7,
-        title: "Genral English",
-        image: "./assets/General-English.jpg",
+        id: 8,
+        title: "General English",
+        image: "./assets/General-English.webp",
         imageAlt: "Teens learning",
         colorClass: "orange",
         sessions: 8,
@@ -107,9 +120,9 @@ export default function CoursesPage() {
         options: ["Private", "Group"],
       },
       {
-        id: 8,
+        id: 9,
         title: "Business English",
-        image: "./assets/Business-English.jpg",
+        image: "./assets/Business-English.webp",
         imageAlt: "Teen debate",
         colorClass: "blue",
         sessions: 8,
@@ -119,15 +132,28 @@ export default function CoursesPage() {
         options: ["Private", "Group"],
       },
       {
-        id: 9,
+        id: 10,
         title: "English Conversation",
-        image: "./assets/Conversation-English.jpg",
+        image: "./assets/Conversation-English.webp",
         imageAlt: "Teen debate",
         colorClass: "orange",
         sessions: 8,
         sessionsPerWeek: 2,
         sessionTime: 60,
         content: "Speaking - Listening - Reading - Writing - Grammar",
+        options: ["Private", "Group"],
+      },
+      {
+        id: 11,
+        title: "The 90-day plan to be fluent in English",
+        CourseNote: "For intermediate levels",
+        image: "./assets/The 90.webp",
+        imageAlt: "Teen debate",
+        colorClass: "blue",
+        sessions_course: "24 + 12 on Friday",
+        due_course: "3 Months",
+        sessionTime: 120,
+        more_info : '2 Calls a week "48 calls during the course" & Daily Tasks for extra practice ',
         options: ["Private", "Group"],
       },
 
@@ -164,13 +190,19 @@ export default function CoursesPage() {
                 />
               </div>
               <h2>{course.title}</h2>
+              <h3>{course.CourseNote && <p style={{ textAlign: "center", backgroundColor:"white" , padding:"10px",  color:"#e86126"}}>{course.CourseNote}</p> }</h3>
               <div className="course-details">
-                <p>Level Sessions: {course.sessions} sessions</p>
-                <p>Session per week: {course.sessionsPerWeek} session</p>
-                <p>Session time: {course.sessionTime} minutes</p>
-                <p>Course content: {course.content}</p>
-                <h4 className="course-options">{course.options.join(" | ")}</h4>
-                <a href="https://api.whatsapp.com/message/FOSTJGBTNFQYH1?autoload=1&app_absent=0" target="_blank" className="book-now">
+          {course.due_course && <p>Duration: {course.due_course}</p>}
+          {course.sessions_course && <p>Sessions: {course.sessions_course}</p>}
+          {course.sessions && <p>Level Sessions: {course.sessions} sessions</p>}
+          {course.sessionsPerWeek && <p>Session per week: {course.sessionsPerWeek} session</p>}
+          {course.sessionTime && <p>Session time: {course.sessionTime} minutes</p>}
+          {course.content && <p>Course content: {course.content}</p>}
+          {course.more_info && <p>More information: {course.more_info}</p>}
+          {course.options?.length > 0 && (<h4 className="course-options">{course.options.join(" | ")}</h4>
+          )}
+
+                <a href="https://wa.me/message/53YMYDUG5NFVJ1" target="_blank" className="book-now">
                   <span>Book Now</span>
                 </a>
               </div>

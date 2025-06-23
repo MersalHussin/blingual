@@ -18,7 +18,7 @@
 .header {
   background-color: var(--primary-orange);
   background-image: linear-gradient(#EA742C, rgba(244, 124, 60, 0.92)),
-    url("/public/assets/CoursesBG2.jpg");
+    url("/public/assets/CoursesBG2.webp");
   background-size: cover;
 background-position: center;
   color: white;
